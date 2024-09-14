@@ -78,7 +78,7 @@ resource "aws_instance" "bastion_instance" {
 
   vpc_security_group_ids = aws_security_group.poc_bastion_sg.*.id
 
-  user_data = filebase64("${path.module}/scripts/install-httpd.sh")
+  # user_data = filebase64("${path.module}/scripts/install-httpd.sh")
 
 }
 
