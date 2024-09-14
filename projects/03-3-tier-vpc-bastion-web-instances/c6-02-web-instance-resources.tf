@@ -60,7 +60,7 @@ resource "aws_instance" "web_instance" {
   # vpc_security_group_ids = aws_security_group.poc_bastion_sg.*.id
   vpc_security_group_ids = [element(aws_security_group.poc_web_sg[*].id, count.index)]
 
-  user_data = filebase64("${path.module}/scripts/install-httpd.sh")
+  user_data = filebase64("${path.module}/scripts/install-nginx.sh")
 
 }
 
